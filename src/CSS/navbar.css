@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather+Sans:ital,wght@1,800&family=Mochiy+Pop+P+One&family=Sedgwick+Ave&display=swap');
+
+
+*{
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+    text-decoration: none;
+}
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: slategray;
+}
+.header__logo{
+    font-family: 'Mochiy Pop P One', sans-serif;
+    color: white;
+    letter-spacing: -2px;
+}
+.header__nav{
+    display: flex;
+}
+.header__nav a{
+    color: white;
+    margin-left: 15px;
+    font-family: 'Merriweather Sans', sans-serif;
+}
+.header__nav a:hover{
+    color: lightblue;
+}
