@@ -30,3 +30,7 @@
 .header__nav a:hover{
     color: lightblue;
 }
+.carrito{
+    width: 20px;
+    height: 20px;
+}

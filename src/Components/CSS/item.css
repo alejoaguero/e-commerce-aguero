@@ -1,0 +1,15 @@
+.articulos{
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+    grid-template-rows: 1fr;
+    text-align: center;
+}
+.articulos__individuales{
+    border:  1px solid lightblue;
+    margin: 0 30px;
+}
+.articulos__titulo{
+    grid-column: 1/6;
+    margin-bottom: 50px;
+}

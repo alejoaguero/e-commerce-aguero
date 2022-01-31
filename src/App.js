@@ -1,10 +1,13 @@
 
-import NavBar from './Components/NavBar';
+import react from 'react';
+import NavBar from './Components/NavBar/NavBar';
+import ItemListContainer from './Components/ItemList/ItemListContainer';
 
 function App() {
   return (
     <div className="App">
-        <NavBar></NavBar>
+        <NavBar name="Shadow-Games"/>
+       <ItemListContainer/>
     </div>
   );
 }
