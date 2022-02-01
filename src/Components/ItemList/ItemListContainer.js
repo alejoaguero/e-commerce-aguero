@@ -1,4 +1,4 @@
-import react, { useState } from "react";
+import react, { useEffect, useState } from "react";
 import Item from "./Item";
 import '../CSS/item.css'
 
@@ -12,8 +12,14 @@ const items = [
 
 
 function ItemListContainer(){
-     const [selectedItem,setItemSelected] = useState('Hola')
+const [selectedItem,setItemSelected] = useState('Hola')
 
+useEffect(()=>{
+    console.log('Hola soy un componente funcional')
+    return ()=>{
+        console.log('Voy a ser eliminado')
+    }
+},[selectedItem])
 
     return(
         <div className="articulos">
