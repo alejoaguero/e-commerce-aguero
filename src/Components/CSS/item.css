@@ -13,3 +13,9 @@
     grid-column: 1/6;
     margin-bottom: 50px;
 }
+
+.contadorStock__valor{
+    border: none;
+    text-align: center;
+    width: 30px;
+}
