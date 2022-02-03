@@ -27,9 +27,9 @@ const getApiGames = async() =>{
         <div className="articulos">
             <h1 className="articulos__titulo">Productos de Lista</h1>
             <div>
-                <p>{selectedItem.name}</p>
-                <p>{selectedItem.description}</p>
-                <p>{selecStock}</p>
+                <p>{selectedItem.name && selecStock == 0 ? selectedItem.name = "No hay stock del Producto": selectedItem.name   }</p>
+                <p>{selectedItem.description && selecStock == 0 ? selectedItem.description = "" : selectedItem.description}</p>
+                <p>{selecStock == 0 ? selectedItem.name = " ": selecStock}</p>
             </div>
             {
                 games.map((game)=>(
