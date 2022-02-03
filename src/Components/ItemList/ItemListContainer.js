@@ -6,6 +6,9 @@ import { productsApi } from "../helpers/promises";
 function ItemListContainer(){
 const [selectedItem,setItemSelected] = useState('Hola')
 const [games, setgames] = useState([]);  
+const [selecStock, setselecStock] = useState();
+
+console.log(selecStock)
 useEffect(()=>{
     getApiGames()
 },[])
@@ -26,11 +29,11 @@ const getApiGames = async() =>{
             <div>
                 <p>{selectedItem.name}</p>
                 <p>{selectedItem.description}</p>
-                <p>{selectedItem.stock}</p>
+                <p>{selecStock}</p>
             </div>
             {
-                games.map(({name,description,stock,id})=>(
-                    <Item key={id} name={name} description={description} stock={stock} setItemSelected={setItemSelected}></Item>
+                games.map((game)=>(
+                    <Item key={game.id} {...game} setItemSelected={setItemSelected} setselecStock={setselecStock}></Item>
                 ))}
         </div>
     )

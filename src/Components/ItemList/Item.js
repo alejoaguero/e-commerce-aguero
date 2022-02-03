@@ -1,29 +1,29 @@
 import react, { useEffect, useState } from "react";
 
-function Item({name,description,stock,setItemSelected}){
-const cambiarNombre = () =>{
-    setItemSelected({name,description,stock})
-}
-const [contador,setContadorValue] = useState(0)
-
-const  sumContador = () =>{
+function Item({name,description,stock,setItemSelected,setselecStock}){
+    const [contador,setContadorValue] = useState(0)
+    
+    const  sumContador = () =>{
         if(contador===stock){
             return setContadorValue(contador)
         }
-            else{
-                return setContadorValue(contador+1)
-            }
+        else{
+            return setContadorValue(contador+1)
+        }
+    }
+    const stockReal = () =>{
+    return setselecStock(contador)
 }
-
 const minContador = () =>{
     if(contador>0){
-    return setContadorValue(contador-1)
+        return setContadorValue(contador-1)
     }
 }
 
-
-
-
+const cambiarNombre = () =>{
+    setItemSelected({name,description,stock})
+    setselecStock(contador)
+}
     return(
         <div className="articulos__individuales">
             <h3>Producto:{name}</h3>
