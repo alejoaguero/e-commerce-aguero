@@ -1,5 +1,5 @@
 
-import react from 'react';
+import react, { useEffect } from 'react';
 import NavBar from './Components/NavBar/NavBar';
 import ItemListContainer from './Components/ItemList/ItemListContainer';
 

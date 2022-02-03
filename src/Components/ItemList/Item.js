@@ -35,6 +35,7 @@ const minContador = () =>{
                     <button className="contadorStock__menos" onClick={minContador}>-</button>
                 </div>
             <button onClick={cambiarNombre}>Agregar</button>
+            <button>Detalles</button>
         </div>
     )
 }

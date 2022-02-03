@@ -8,12 +8,21 @@
 .articulos__individuales{
     border:  1px solid lightblue;
     margin: 0 30px;
+    box-shadow: 5px 5px 20px lightgrey;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-family: 'Merriweather Sans', sans-serif;;
 }
 .articulos__titulo{
     grid-column: 1/6;
     margin-bottom: 50px;
 }
-
+.contadorStock__mas, .contadorStock__menos{
+    width: 20px;
+    margin: 10px;
+}
 .contadorStock__valor{
     border: none;
     text-align: center;
