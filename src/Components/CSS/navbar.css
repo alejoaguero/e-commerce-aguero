@@ -19,6 +19,9 @@
     color: white;
     letter-spacing: -2px;
 }
+.header__logo__principal{
+    color: white;
+}
 .header__nav{
     display: flex;
 }
@@ -29,4 +32,8 @@
 }
 .header__nav a:hover{
     color: lightblue;
+}
+
+.color{
+    color: white;
 }

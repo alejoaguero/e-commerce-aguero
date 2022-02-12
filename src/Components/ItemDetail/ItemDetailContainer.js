@@ -1,14 +1,23 @@
 import React, { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
 import { productsApi } from '../helpers/promises';
 import ItemDetail from './ItemDetail';
 
 const ItemDetailContainer = () => {
 const [gamesDetail, setGamesDetail] = useState([]);
+const [selectedItem, setSelectedItem] = useState(null)
+const { id } = useParams();
+console.log(id)
 
 
 useEffect(()=>{
     getApiGames()
 },[])
+useEffect(() => {
+    const findGamedId = gamesDetail.find(produc => produc.id === id)
+    setSelectedItem(findGamedId)
+}, [gamesDetail])
+
 
 
 const getApiGames = async() =>{
@@ -20,16 +29,9 @@ const getApiGames = async() =>{
     }
     
 }
-  
-  
-  
-  
-  
-  
-  
     return (
       <>
-        <ItemDetail gameDetail={gamesDetail}/>
+        <ItemDetail selectedItem={selectedItem}/>
       </>
   )
 };

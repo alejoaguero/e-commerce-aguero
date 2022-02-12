@@ -1,21 +1,19 @@
 .articulos{
-    margin-top: 20px;
+    margin-top: 90px;
     text-align: center;
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
     justify-content: center;
     align-items: center;
-    flex-direction: column;
 }
 .articulos__individuales{
-    margin: 0 30px;
-    height: 100px;
+    margin: 10px 30px;
     display: flex;
     align-items: center;
     flex-direction: column;
     font-family: 'Merriweather Sans', sans-serif;;
 }
 .articulos__titulo{
-    grid-column: 1/6;
     margin-bottom: 50px;
 }
 .contadorStock__mas, .contadorStock__menos{
@@ -30,4 +28,11 @@
 .buttonVer{
     text-align: center;
     width: 90px;
+}
+.buttonVer__color{
+    color: black;
+}
+
+.imagenes{
+    width: 150px;
 }

@@ -3,8 +3,10 @@ import Item from "./Item";
 import '../CSS/item.css'
 import { productsApi } from "../helpers/promises";
 import ItemMap from "./ItemMap";
+import { useParams } from "react-router-dom";
 
 function ItemListContainer(){
+const { id } = useParams();
 const [games, setgames] = useState([]);  
 
 useEffect(()=>{
@@ -17,14 +19,13 @@ const getApiGames = async() =>{
         const result = await productsApi
         setgames(result)
     } catch (error) {
-        console.log(error)
+        console.log('Error Problemas')
     }
     
 }
     return(
         <div className="articulos">
-            <h1 className="articulos__titulo">Productos de Lista</h1>
-            <ItemMap games={games}/> 
+            <ItemMap games={games} id ={id}/> 
         </div>
     )
 }

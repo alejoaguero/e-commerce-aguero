@@ -2,14 +2,21 @@ import React from 'react';
 import Item from './Item';
 
 
-const ItemMap = ({games}) => {
-    console.log(games)
+const ItemMap = ({games,id}) => {
 
+const filterGames = games.filter((game) => game.category === id)
+
+console.log(filterGames)
   return(
     <>
         {
-            games.map((game)=>(
-                    <Item key={game.id} name={game.name}></Item>
+           !id && games.map((game)=>(
+                    <Item key={game.id} name={game.name} imagen={game.imagen} id={game.id}></Item>
+                ))
+        }
+        { 
+          id && filterGames.map((game)=>(
+                    <Item key={game.id} name={game.name} imagen={"../"+ game.imagen}></Item>
                 ))
         }
     </>
