@@ -7,8 +7,6 @@ const ItemDetailContainer = () => {
 const [gamesDetail, setGamesDetail] = useState([]);
 const [selectedItem, setSelectedItem] = useState(null)
 const { id } = useParams();
-console.log(id)
-
 
 useEffect(()=>{
     getApiGames()

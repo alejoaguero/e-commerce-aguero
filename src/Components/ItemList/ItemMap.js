@@ -6,7 +6,6 @@ const ItemMap = ({games,id}) => {
 
 const filterGames = games.filter((game) => game.category === id)
 
-console.log(filterGames)
   return(
     <>
         {

@@ -5,7 +5,7 @@ const ItemDetail = ({selectedItem}) => {
   
   return (
       <>
-                 return <Item2 {...selectedItem}></Item2>
+                 <Item2 {...selectedItem}></Item2>
       </>
   );
 };
