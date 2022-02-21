@@ -1,6 +1,8 @@
 import React from 'react';
 import { Item2 } from './Item2';
 
+
+
 const ItemDetail = ({selectedItem}) => {
   
   return (

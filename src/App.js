@@ -1,12 +1,15 @@
 
 import react from 'react';
+import CartContext from './context/CartContext';
 import Routes from './routes/Routes';
 
 
 function App() {
   return (
     <div className="App">
-       <Routes/>
+       <CartContext>
+          <Routes/>
+       </CartContext>
     </div>
   );
 }

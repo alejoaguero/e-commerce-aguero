@@ -1,7 +1,13 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useContext, useEffect } from "react";
+import { CartProvider } from "../../context/CartContext";
 
-function ItemCounter({contador,setContador,stock,onAdd}){
+function ItemCounter({contador,setContador,stock,itemCart}){
+const {addItem, cart} = useContext(CartProvider)
+
+useEffect(() => {
+    console.log(cart)
+}, [addItem])
+
 
 const  sumContador = () =>{
     if(contador===stock){
@@ -28,7 +34,7 @@ const minContador = () =>{
                 <span>{contador}</span>
                 <button className="contadorStock__menos" onClick={minContador}>-</button>
             </div>
-            <button onClick={onAdd}>Agregar Carrito</button>
+            <button onClick={()=> addItem(itemCart,contador)}>Agregar Carrito</button>
         </>
     )
 }

@@ -1,4 +1,4 @@
-import react, { useEffect, useState } from "react";
+import react, { useContext, useEffect, useState } from "react";
 import Item from "./Item";
 import '../CSS/item.css'
 import { productsApi } from "../helpers/promises";
@@ -7,7 +7,7 @@ import { useParams } from "react-router-dom";
 
 function ItemListContainer(){
 const { id } = useParams();
-const [games, setgames] = useState([]);  
+const [games, setgames] = useState([]); 
 
 useEffect(()=>{
     getApiGames()
