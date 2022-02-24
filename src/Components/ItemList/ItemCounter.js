@@ -3,11 +3,7 @@ import { CartProvider } from "../../context/CartContext";
 
 function ItemCounter({contador,setContador,stock,itemCart}){
 const {addItem, cart} = useContext(CartProvider)
-
-useEffect(() => {
-    console.log(cart)
-}, [addItem])
-
+console.log(cart)
 
 const  sumContador = () =>{
     if(contador===stock){

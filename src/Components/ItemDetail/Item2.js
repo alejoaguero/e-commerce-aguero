@@ -1,11 +1,12 @@
-import React, { useState} from 'react';
+import React, { useContext,  useState} from 'react';
 import { Link } from 'react-router-dom';
+import { CartProvider } from '../../context/CartContext';
 import '../CSS/ItemDetail.css'
 import ItemCounter from '../ItemList/ItemCounter';
 
 
 export const Item2 = ({id,name,imagen,precio}) => {
-const stock = 20;
+const stock = 20
 const [contador, setContador] = useState(0);
 
 const itemCart = {

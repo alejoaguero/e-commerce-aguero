@@ -6,17 +6,23 @@ export const CartProvider = createContext()
 
 const CartContext = ({children}) => {
 const [cart, setCart] = useState([])
+const [cantRequest, setCantRequest] = useState(0)
+
+
 const addItem = (item,quantity) =>{
-  const articule = {
+const repeatArticule = (element) => element.item.id === item.id
+const articule = {
     item,
     quantity
   }
 
-  if(quantity !== 0){
-    setCart([...cart,articule])
+  
+  if(cart.some(repeatArticule) || quantity === 0){
+    return;
   }
-    else
-      console.log('Elegir la cantidad deseada')
+        else
+        setCart([...cart,articule]) 
+  
 }
 
 const removeItem = (id) =>{
@@ -28,13 +34,10 @@ const removeItem = (id) =>{
 const clearItems = () => {
     setCart([])
 }
-  
-const isInCart = Boolean;
-  
 
 
 
-  return <CartProvider.Provider value={{cart,setCart,addItem,removeItem,clearItems,isInCart}}>{children}</CartProvider.Provider>
+  return <CartProvider.Provider value={{cart,setCart,addItem,removeItem,clearItems,cantRequest,setCantRequest}}>{children}</CartProvider.Provider>
 }
 
 export default CartContext

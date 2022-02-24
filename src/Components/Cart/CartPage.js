@@ -3,18 +3,28 @@ import { CartProvider } from '../../context/CartContext'
 import CartItems from './CartItems'
 
 export const CartPage = () => {
-  const {cart,clearItems} = useContext(CartProvider)  
+  const {cart,clearItems,cantRequest} = useContext(CartProvider)  
 
   return (
       <>
-          <h1>Carrito de Compras</h1>
+        
           {
+            cart.length > 0 ?
+            
             cart.map(item => {
-              return <CartItems {...item}></CartItems>
-              })
+              return <CartItems {...item} />
+              }) 
+
+              : <h3>No hay articulos agregados al carrito</h3>
           } 
-          <hr/> 
-          <button onClick={clearItems}>Eliminar</button>
+          {
+            cart.length > 0 ?
+              <div> 
+                <button onClick={clearItems}>Eliminar</button>
+                <h4>Total Bultos: {} - Total a Pagar: {}</h4>
+              </div>
+              : null
+          }
       </>
   )
 }
