@@ -14,7 +14,7 @@ const [sidebar, setsidebar] = useState(0)
           <header className="header">
               <Menu/>
               <h1 className="header__logo">
-                <Link to='/' className="header__logo__principal">ShadowGames</Link>
+                <Link to='/' className="header__logo__principal">SG</Link>
               </h1>
               <NavLink to='/cart'>
                 <CartWidget/>

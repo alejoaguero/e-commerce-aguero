@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter, Route, Routes as Switch } from 'react-router-dom';
 import { CartPage } from '../Components/Cart/CartPage';
+import CategoryList from '../Components/CategoryList/CategoryList';
 import ItemDetailContainer from '../Components/ItemDetail/ItemDetailContainer';
 import ItemListContainer from '../Components/ItemList/ItemListContainer';
 import NavBar from '../Components/NavBar/NavBar';
@@ -15,7 +16,7 @@ const Routes = () => {
           <Route path='/' element={<ItemListContainer/>}></Route>
           <Route path='/item/:id' element={<ItemDetailContainer/>}></Route>
           <Route path='/cart' element={<CartPage/>}></Route>
-          <Route path='/category/:id' element={<ItemListContainer/>}></Route>
+          <Route path='/category/:id' element={<CategoryList/>}></Route>
           <Route path='*' element={<PageNotFound/>}></Route>
         </Switch>
       </BrowserRouter>

@@ -1,9 +1,11 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { CartProvider } from "../../context/CartContext";
 
-function ItemCounter({contador,setContador,stock,itemCart}){
-const {addItem, cart} = useContext(CartProvider)
-console.log(cart)
+function ItemCounter({stock,itemCart}){
+const {addItem} = useContext(CartProvider)
+const [contador, setContador] = useState(0);
+
+
 
 const  sumContador = () =>{
     if(contador===stock){
@@ -19,7 +21,6 @@ const minContador = () =>{
         return setContador(contador-1)
     }
 }
-
 
 
 

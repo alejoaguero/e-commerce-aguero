@@ -9,9 +9,9 @@ const Menu = ({sidebar}) => {
 
   return(
         <div className='menu'>
-              <Link to='category/PS5' className='menuDesple__link'>PS5</Link>
-              <Link to='category/PS4' className='menuDesple__link'>PS4</Link>
-              <Link to='category/switch' className='menuDesple__link'>Switch</Link>
+              <Link to='category/ps5' className='menuDesple__link'>PS5</Link>
+              <Link to='category/ps4' className='menuDesple__link'>PS4</Link>
+              <Link to='category/xbox' className='menuDesple__link'>Xbox</Link>
         </div>
   )
 }

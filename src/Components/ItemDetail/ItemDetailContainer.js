@@ -1,35 +1,34 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { productsApi } from '../helpers/promises';
 import ItemDetail from './ItemDetail';
+import { doc, getDoc, getFirestore} from "firebase/firestore";
+import Loader from '../Loader/Loader';
 
 const ItemDetailContainer = () => {
-const [gamesDetail, setGamesDetail] = useState([]);
-const [selectedItem, setSelectedItem] = useState(null)
+const [produDetail, setProduDetail] = useState(null) 
+const [loading, setLoading] = useState(true)
 const { id } = useParams();
 
-useEffect(()=>{
-    getApiGames()
+
+useEffect(() =>{
+  const db = getFirestore();
+
+  const docRef = doc(db,"apigames", id)
+
+      getDoc(docRef).then((snapshot=>{
+
+        setProduDetail({id: snapshot.id,...snapshot.data()})
+
+              
+      })).finally(()=>{setLoading(false)})
 },[])
-useEffect(() => {
-    const findGamedId = gamesDetail.find(produc => produc.id === id)
-    setSelectedItem(findGamedId)
-}, [gamesDetail])
 
 
 
-const getApiGames = async() =>{
-    try {
-        const result = await productsApi
-        setGamesDetail(result)
-    } catch (error) {
-        console.log(error)
-    }
-    
-}
     return (
       <>
-        <ItemDetail selectedItem={selectedItem}/>
+        {loading && <Loader/>}
+        <ItemDetail produDetail={produDetail}/>
       </>
   )
 };

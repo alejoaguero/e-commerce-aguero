@@ -3,11 +3,11 @@ import { Item2 } from './Item2';
 
 
 
-const ItemDetail = ({selectedItem}) => {
+const ItemDetail = ({produDetail}) => {
   
   return (
       <>
-                 <Item2 {...selectedItem}></Item2>
+                 <Item2 {...produDetail }></Item2>
       </>
   );
 };

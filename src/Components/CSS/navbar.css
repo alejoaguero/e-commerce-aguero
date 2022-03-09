@@ -1,6 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Merriweather+Sans:ital,wght@1,800&family=Mochiy+Pop+P+One&family=Sedgwick+Ave&display=swap');
-
-
 *{
     padding: 0;
     margin: 0;
@@ -11,8 +9,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px;
-    background-color: red;
+    background-color:red;
 }
 .header__logo{
     font-family: 'Mochiy Pop P One', sans-serif;

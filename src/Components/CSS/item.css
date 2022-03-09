@@ -1,20 +1,39 @@
+body{
+    background-color: red;
+}
+
 .articulos{
     margin-top: 90px;
     text-align: center;
     display: grid;
-    grid-template-columns: repeat(4,1fr);
+    grid-template-columns: repeat(3,auto);
     justify-content: center;
     align-items: center;
+    grid-column-gap: 100px;
+    grid-row-gap: 50px;
 }
 .articulos__individuales{
-    margin: 10px 30px;
+    background-color: white;   
     display: flex;
     align-items: center;
-    flex-direction: column;
-    font-family: 'Merriweather Sans', sans-serif;;
+    flex-direction: column; 
+    font-family: 'Merriweather Sans', sans-serif;   
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 10px;
+}
+.articulos__individuales:hover{
+    transition: all 0.3s;
+    box-shadow: 0px 0px 15px black;
+    cursor: pointer;
 }
 .articulos__titulo{
     margin-bottom: 50px;
+}
+.articulos__imagenes{
+    height: 224px;
+    width: 179px;
+    border-radius: 10px;
 }
 .contadorStock__mas, .contadorStock__menos{
     width: 20px;
@@ -28,6 +47,9 @@
 .buttonVer{
     text-align: center;
     width: 90px;
+}
+.buttonVer:hover{
+    cursor: pointer;
 }
 .buttonVer__color{
     color: black;
