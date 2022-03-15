@@ -1,5 +1,5 @@
 body{
-    background-color: red;
+    background-color: #E5E8E8;
 }
 
 .articulos{
@@ -17,14 +17,13 @@ body{
     display: flex;
     align-items: center;
     flex-direction: column; 
-    font-family: 'Merriweather Sans', sans-serif;   
-    border: 1px solid black;
-    border-radius: 10px;
-    padding: 10px;
+    font-family: 'Merriweather Sans', sans-serif;
+    padding: 10px;      
 }
 .articulos__individuales:hover{
     transition: all 0.3s;
-    box-shadow: 0px 0px 15px black;
+    transform: scale(1.05);
+    box-shadow: 0px 0px 20px grey;
     cursor: pointer;
 }
 .articulos__titulo{

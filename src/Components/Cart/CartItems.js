@@ -1,17 +1,22 @@
 import React, { useContext, useEffect } from 'react'
 import { CartProvider } from '../../context/CartContext'
-import '../CSS/ItemCart.css'
+import './ItemCart.css'
 
 const CartItems = ({name,image,price,quantity,id}) => {
-const {removeItem,setTotalPagar,totalPagar} = useContext(CartProvider)
+const {removeItem,totalaPagar} = useContext(CartProvider)
 let priceTotal =  price*quantity
+useEffect(()=>{
+  totalaPagar(priceTotal)
+})
+
+
   return (
     <>
-      <div className='containerCart' key={id}>
-          <h4>{name}</h4>
-          <img className='imageCart' src={image} alt={name}></img>
-          <h5>Cantidad: {quantity} - Total: ${priceTotal}</h5> 
-          <button onClick={() => removeItem(id)}>-</button>
+      <div className='containerItem' key={id}>
+          <img className='imageCart marginItem' src={image} alt={name}></img>
+          <h4 className='marginItem'>{name}</h4>
+          <h5 className='marginItem'>Cantidad: {quantity} - Total: ${priceTotal}</h5> 
+          <button onClick={() => removeItem(id)}>x</button>
       </div>
     </>
   )

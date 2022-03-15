@@ -1,0 +1,38 @@
+*{
+    list-style-type: none;
+    text-decoration: none;
+}
+
+.padreCart{
+    display: flex;
+    min-height: 92.5vh;
+    justify-content: center;
+    align-items: center;
+}
+.hijoCart{
+    background-color: white;
+}   
+.totalCart{
+
+}
+
+.containerCart{
+    display: grid;
+}
+.vaciarCarro{
+    border: none;
+    
+}
+
+/*Item del Carrito*/
+
+.containerItem{
+    display: flex;
+    margin: 0px 20px;
+}
+.imageCart{
+    width: 120px;
+}
+.marginItem{
+    margin-right: 10px;
+}
